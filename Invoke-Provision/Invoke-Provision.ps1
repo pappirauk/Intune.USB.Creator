@@ -220,14 +220,14 @@ exit
 select disk $targetDrive
 clean
 convert gpt
-create partition efi size=100
+create partition efi size=200
 format quick fs=fat32 label="System"
 assign letter="S"
 create partition msr size=16
 create partition primary
 format quick fs=ntfs label="Windows"
 assign letter="W"
-shrink desired=950
+shrink desired=1500
 create partition primary
 format quick fs=ntfs label="Recovery"
 assign letter="R"
